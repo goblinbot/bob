@@ -28,4 +28,14 @@ client.on('message', message => {
         // send back "Pong." to the channel the message was sent in
         message.channel.send('@everyone');
     }
+
+    if(testForMaatiChannel(message)) {
+        console.log('maati check');
+    } else {
+        console.log('maati no!');
+    }
 });
+
+function testForMaatiChannel(message) {
+    return (message.channel.name === config.channelname);
+}
