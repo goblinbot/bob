@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const CronJob = require('cron').CronJob;
-const config = require('./config/config.js');
+const config = require('./config/config.json');
 
 client.once('ready', () => {
     console.log('BOB online!');
 });
 
 if (config) {
-    client.login(config.sys.token);
+    client.login(config.token);
 } else {
     console.error('!! config missing');
 }
